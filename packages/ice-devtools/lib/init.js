@@ -19,6 +19,7 @@ module.exports = async function init(cwd) {
     const options = Object.assign({
       cwd,
       template: process.env.TEMPLATE, // --template
+      registry: process.env.REGISTRY, // --download from which registry
     });
 
     const type = process.env.TYPE || 'material'; // --type
@@ -68,6 +69,10 @@ module.exports = async function init(cwd) {
 async function initAsk(options = {}) {
   // select template
   let template = options.template;
+  
+  // if specify a registry
+  const registry = options.registry;
+
   if (!template) {
     const result = await (
       inquirer.prompt([
@@ -131,5 +136,6 @@ async function initAsk(options = {}) {
     scope,
     template,
     forInnerNet,
+    registry,
   };
 }

@@ -8,7 +8,11 @@ module.exports = {
       },
       {
         name: '--type [type]',
-        desc: 'materail type, e.g. block/component',
+        desc: 'material type, e.g. block/component',
+      },
+      {
+        name: '--registry [registry]',
+        desc: 'download the material from which registry',
       },
     ],
   },
